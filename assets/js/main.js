@@ -1,3 +1,4 @@
+let isRunning = false;
 ~(function () {
   function H() {
     this.A = function (e) {
@@ -245,6 +246,7 @@
   }
 
   function a() {
+    isRunning = true;
     D.removeChild(W),
       x.play("new"),
       (y || I > 1) &&
@@ -254,6 +256,26 @@
 
   function c() {
     (V.style.display = "block"), x.play("win");
+  }
+
+  function keyDown(e) {
+    if (e.key === "Escape" && isRunning) {
+      renderMenu();
+      p();
+    }
+  }
+
+  function renderMenu() {
+    let menuControls = document.getElementById("menu-controls");
+    if (menuControls.style.display === "block") {
+      menuControls.style.display = "none";
+    } else {
+      menuControls.style.display = "block";
+    }
+  }
+
+  function closeMenu() {
+    renderMenu();
   }
 
   function f() {
@@ -1010,7 +1032,8 @@
     W = document.getElementById("home"),
     z = document.getElementById("start"),
     V = document.getElementById("end"),
-    X = document.getElementById("reset");
+    X = document.getElementById("reset")
+    closeMenuButton = document.getElementById("close-menu-controls");
   W.addEventListener("mousedown", r),
     W.addEventListener("touchstart", r),
     z.addEventListener("mousedown", a),
@@ -1018,7 +1041,10 @@
     V.addEventListener("mousedown", r),
     V.addEventListener("touchstart", r),
     X.addEventListener("mousedown", f),
-    X.addEventListener("touchstart", f);
+    X.addEventListener("touchstart", f),
+    closeMenuButton.addEventListener("mousedown", closeMenu),
+    closeMenuButton.addEventListener("touchstart", closeMenu),
+    document.addEventListener("keydown", keyDown);
   var Y = 0.6,
     G = 0.1,
     J = 40,
