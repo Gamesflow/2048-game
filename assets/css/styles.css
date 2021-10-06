@@ -90,14 +90,14 @@ label {
 }
 
 #backcanvas {
-  background: #455a64;
+  background:  #455a64;
 }
 
 #end,
 #home,
 #load {
   background: rgba(0, 0, 0, 0.5);
-  color: #fff;
+  color: #fff; 
   cursor: default;
   font: 300 64px/96px "Segoe UI", "Helvetica Neue", sans-serif;
   height: 1080px;
@@ -208,7 +208,7 @@ p {
 }
 
 label {
-  color: #eeff41;
+  color: #eeff32;
 }
 
 body.mobile #menu > * {
@@ -223,6 +223,6 @@ body.mobile #menu > * {
   display: inline !important;
 }
 
-.clear {
-  clear: both;
+body.white {
+  background-color: rgb(211, 209, 209);
 }
