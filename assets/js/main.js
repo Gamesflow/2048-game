@@ -403,7 +403,39 @@
     y && (document.body.className = "mobile");
     var t = document.getElementById("m"),
       e = document.getElementById("s"),
-      o = document.getElementById("q");
+      o = document.getElementById("q"),
+      g= document.getElementById("d"),
+      h1=document.getElementById("h1"),
+      para =document.getElementById("p");
+
+      g.addEventListener('change', ()=>{
+        document.body.classList.toggle('white');
+      
+        if(document.body.classList.contains("white"))
+        {
+          W.style.color = " #0033cc";
+          h1.style.fontWeight= "400";
+          para.style.fontWeight= "500";
+          h1.style.textShadow= "1px 0 0 #ffffb3, -1px 0 0 #4da6ff";
+          para.style.textShadow= "1px 0 0  #b3b3cc";
+          F.style.background = "white";
+          H.style.background = "white";
+          V.style.color="#0033cc"
+        }
+        else 
+        {
+          W.style.color = "white";
+          F.style.background = "#455a64";
+          h1.style.fontWeight= "300";
+          para.style.fontWeight= "400";
+          h1.style.textShadow= "2px 0 0 red, -2px 0 0 #0ff";
+          para.style.textShadow= "1px 0 0 red, -1px 0 0 #0ff";
+          H.style.background = "rgba(0, 0, 0, 0.5)";
+          V.style.color="#fff";
+        }
+      
+      })
+
     t.addEventListener("change", function (e) {
       ut && (t.checked ? ((ut.currentTime = 0), ut.play()) : ut.pause());
     }),
